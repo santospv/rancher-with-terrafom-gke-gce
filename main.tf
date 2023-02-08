@@ -8,7 +8,7 @@ terraform {
     } 
 
     backend "gcs" {
-        bucket  = "terraform_bucket_pvs"
+        bucket  = "terraform_bucket_pvs_rancher"
         prefix  = "terraform/terraform.tfstate"
         credentials  = "serviceaccount.json"
     }

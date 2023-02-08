@@ -1,5 +1,5 @@
 resource "google_compute_network" "terraform-network" {
-  name                    = sensitive("${var.project_id}-vpc")
+  name                    = sensitive("${var.project_id}-vpcrancher")
   auto_create_subnetworks = "false"
 }
 
