@@ -23,3 +23,9 @@
    description = "IP Rancher Host"
    sensitive   = false
  }
+
+  output "ssh_access" {
+   value       = "ssh ${var.user}@${google_compute_address.static.address}" 
+   description = "IP Rancher Host"
+   sensitive   = false
+ }

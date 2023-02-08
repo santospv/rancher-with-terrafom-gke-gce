@@ -1,6 +1,5 @@
 resource "google_compute_address" "static" {
-  name = "ipv4-address"
-  depends_on = [ google_compute_firewall.firewall ]
+  name = "ipv4-address2"
 }
 resource "google_compute_instance" "rancher_host" {
   name = sensitive("${var.project_id}-rancher")
@@ -17,7 +16,7 @@ resource "google_compute_instance" "rancher_host" {
   }
   network_interface {
     network = google_compute_network.terraform-network.name
-    subnetwork = google_compute_subnetwork.subnet.name
+    subnetwork = google_compute_subnetwork.public_subnet.name
 
     access_config {
       nat_ip = google_compute_address.static.address
